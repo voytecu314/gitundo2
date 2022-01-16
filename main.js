@@ -4,9 +4,16 @@ let toDoList = [];
 
 //Create a function to push todo items as objects into array
 
-const creatToDo = (task) => {
-    toDoList.push( {task, isDone:false} );
-}
+const creatToDo = () => {
+    let display = `${getToDoList().split(`
+    `).reverse().join('\n')}`;
+    let task = prompt(display,'Type your task here');
+    if(task===null) return 0;
+    else {
+        toDoList.push( {task, isDone:false} );
+        creatToDo();
+        }
+    }
 
 //Function to read from array and prepare a list to show on prompt msg
 
@@ -87,7 +94,8 @@ const deleteItem = () => {
 
 //Menu on prompt:
 
-let menu =`PLEASE TYPE TO-DO TASK or:
+let menu =`MENU:
+0. Create To-Do task
 1. Make any item done or undone
 2. Edit any item on the list
 3. Delete any item
@@ -98,9 +106,13 @@ q. Quit.
 
 let toDoItem;
 do {
-    toDoItem = prompt(menu,'PLEASE TYPE TO-DO TASK here');
+    toDoItem = prompt(menu);
 
     switch(toDoItem){
+        case '0':
+            creatToDo(); 
+            break;
+
         case '1':
             if(toDoList.length==0) alert('Your ToDoList is EMPTY')
             else getItemToSwitchDone();
@@ -122,10 +134,6 @@ do {
             break;
         case null: 
         case 'q':
-            break;
-
-        default:
-            creatToDo(toDoItem); //--> [{task:code, iDone:false}]
             break;
         }
         
