@@ -56,7 +56,7 @@ const checkIndex = (display) => {
     do{
         itemIndex = prompt(display,`Type integer numbers from 0 to ${toDoList.length - 1}`);
         if(itemIndex===null) break;
-    }while(!Number.isInteger(parseFloat(itemIndex)) || itemIndex < 0 || itemIndex > toDoList.length || isNaN(parseInt(itemIndex)))
+    }while(!Number.isInteger(parseFloat(itemIndex)) || itemIndex < 0 || itemIndex > toDoList.length-1 || isNaN(parseInt(itemIndex)))
     return itemIndex;
 }
 
@@ -134,6 +134,9 @@ do {
             break;
         case null: 
         case 'q':
+            break;
+        default:
+            alert('Please choose an option from the menu');
             break;
         }
         
