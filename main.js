@@ -97,21 +97,22 @@ const prepMsg = (text) => {
     return msg;
 }
 
+//Menu on prompt:
+
+const menu =`MENU:
+0. Create new To-Do task
+1. Make any item done or undone
+2. Edit any item on the list
+3. Delete any item
+4. Show the list
+q. Quit.
+`;
 
 //Manage toDo via prompt
 
 let toDoItem;
 do {
-//Menu on prompt:
 
-    const menu =`MENU:
-    0. Create new To-Do task
-    1. Make any item done or undone
-    2. Edit any item on the list
-    3. Delete any item
-    4. Show the list
-    q. Quit.
-    `;
     toDoItem = prompt(menu);
 
     switch(toDoItem){
