@@ -7,7 +7,7 @@ let toDoList = [];
 const creatToDo = () => {
     let display = `${getToDoList().split(`
     `).reverse().join('\n')}`;
-    let task = prompt(display,'Type your task here');
+    let task = prompt(display,'Type your task here or cancel');
     if(task===null) return 0;
     else {
         toDoList.push( {task, isDone:false} );
@@ -26,7 +26,9 @@ const getItemToSwitchDone = () => {
     let msg = prepMsg('switch status');
     let itemIndex=checkIndex(msg);
     if(itemIndex===null) return 0;
-    else switchDone(toDoList[itemIndex]);//??
+    else switchDone(toDoList[itemIndex]);
+    alert(getToDoList());
+    getItemToSwitchDone();
 }
 
 //Function to read from array and prepare a list to show on prompt msg
