@@ -92,20 +92,22 @@ const deleteItem = () => {
     else toDoList.splice(itemIndex,1);
 }
 
-//Menu on prompt:
 
-let menu =`MENU:
-0. Create To-Do task
+//Manage toDo via prompt
+
+let toDoItem;
+do {
+    //Menu on prompt:
+
+const menu =`${getToDoList()}
+MENU:
+0. Create new To-Do task
 1. Make any item done or undone
 2. Edit any item on the list
 3. Delete any item
 4. Show the list
 q. Quit.
 `;
-//Manage toDo via prompt
-
-let toDoItem;
-do {
     toDoItem = prompt(menu);
 
     switch(toDoItem){
