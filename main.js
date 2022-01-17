@@ -99,8 +99,7 @@ let toDoItem;
 do {
     //Menu on prompt:
 
-const menu =`${getToDoList()}
-MENU:
+const menu =`MENU:
 0. Create new To-Do task
 1. Make any item done or undone
 2. Edit any item on the list
