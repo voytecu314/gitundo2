@@ -149,5 +149,5 @@ do {
         
 } while(toDoItem !== 'q' && toDoItem !== null)
 
-console.log(toDoList);
+console.table(toDoList);
 
